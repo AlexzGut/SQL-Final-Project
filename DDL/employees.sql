@@ -7,7 +7,7 @@ CREATE TABLE employees (
     contact_number NUMERIC(10,0) NOT NULL,
     email VARCHAR(50) NOT NULL,
     hire_date DATE DEFAULT (CURRENT_DATE),
-    salary NUMERIC(7,2) NOT NULL,
+    salary NUMERIC(9,2) NOT NULL,
     emp_status VARCHAR(15) NOT NULL,
     manager_id NUMERIC(6,0),
     store_id NUMERIC(6,0),
@@ -61,6 +61,7 @@ ALTER TABLE employees
 ALTER TABLE employees
 	ADD CONSTRAINT employees_hire_date_gt_date_of_birth
     CHECK (hire_date > date_of_birth);
+--  CHECK ((YEAR(hire_date) - YEAR(date_of_birth)) >= 18);
     
 ALTER TABLE employees
 	ADD CONSTRAINT employees_email

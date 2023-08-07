@@ -7,8 +7,8 @@ CREATE SCHEMA one_less_craft;
 CREATE TABLE crafts (
 	craft_id NUMERIC(6,0) NOT NULL,
     craft_name VARCHAR(20) NOT NULL,
-    selling_price NUMERIC(7,2) NOT NULL,
-    manufacturing_cost NUMERIC(7,2) NOT NULL,
+    selling_price NUMERIC(9,2) NOT NULL,
+    manufacturing_cost NUMERIC(9,2) NOT NULL,
     size VARCHAR(4) NOT NULL,
     color VARCHAR(20),
     craft_type VARCHAR(20) NOT NULL,
@@ -74,7 +74,7 @@ CREATE TABLE departments (
     department_name VARCHAR(30) NOT NULL,
     department_phone VARCHAR(10) NOT NULL,
     department_email VARCHAR(50) NOT NULL,
-    department_budget NUMERIC(7,2) NOT NULL,
+    department_budget NUMERIC(9,2) NOT NULL,
     department_description VARCHAR(100),
     manager_id NUMERIC(6,0));
 
@@ -115,7 +115,7 @@ CREATE TABLE employees (
     contact_number NUMERIC(10,0) NOT NULL,
     email VARCHAR(50) NOT NULL,
     hire_date DATE DEFAULT (CURRENT_DATE),
-    salary NUMERIC(7,2) NOT NULL,
+    salary NUMERIC(9,2) NOT NULL,
     emp_status VARCHAR(15) NOT NULL,
     manager_id NUMERIC(6,0),
     store_id NUMERIC(6,0),
@@ -244,7 +244,7 @@ CREATE TABLE yarns (
 	yarn_type VARCHAR(15) NOT NULL,
     yarn_weight VARCHAR(15) NOT NULL,
     yarn_color VARCHAR(15) NOT NULL,
-    yarn_price NUMERIC(7,2) NOT NULL,
+    yarn_price NUMERIC(9,2) NOT NULL,
     yarn_quality VARCHAR(20) NOT NULL,
     yarn_description VARCHAR(100));
 

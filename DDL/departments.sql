@@ -3,7 +3,7 @@ CREATE TABLE departments (
     department_name VARCHAR(30) NOT NULL,
     department_phone VARCHAR(10) NOT NULL,
     department_email VARCHAR(50) NOT NULL,
-    department_budget NUMERIC(7,2) NOT NULL,
+    department_budget NUMERIC(9,2) NOT NULL,
     department_description VARCHAR(100),
     manager_id NUMERIC(6,0));
 

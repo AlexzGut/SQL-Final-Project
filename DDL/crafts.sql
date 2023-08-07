@@ -26,6 +26,24 @@ ALTER TABLE crafts
 -- ---------------------------------------------------------------------------
 -- 								TEST CASES
 -- ---------------------------------------------------------------------------
+-- ---------------------------------------------------------------------------
+-- 							crafts_craft_id_pk
+-- ---------------------------------------------------------------------------
+
+-- 						** Valid test **
+-- Expected results: Insert statement add a row in the crafts table
+-- Action:
+INSERT INTO crafts 
+VALUES (100000, 'Hat-Kors', 10.65, 3.80, 'm', 'lightblue', 'Hat', 'classic', 'Nice hat for cold weather');
+-- Test results: 1 row Inserted
+
+-- ---------------------------------------------------------------------------
+-- 						** InValid test **
+-- Expected results: Update statement fails to modify a row in the crafts table
+-- Action:
+INSERT INTO crafts 
+VALUES (100000, 'Sweter', 48.99, 15.78, 's', 'coral', 'Sweter', 'Slim', 'Sweter with black stripes');
+-- Test results: 
 
 -- ---------------------------------------------------------------------------
 -- 					crafts_selling_price_gt_manufacturing_cost
@@ -35,7 +53,7 @@ ALTER TABLE crafts
 -- Expected results: Insert statement add a row in the crafts table
 -- Action:
 INSERT INTO crafts 
-VALUES (100000, 'Hat-Kors', 10.65, 3.80, 'm', 'lightblue', 'Hat', 'classic', 'Nice hat for cold weather');
+VALUES (100001, 'Sweter', 48.99, 15.78, 's', 'coral', 'Sweter', 'Slim', 'Sweter with black stripes');
 -- Test results: 1 row Inserted
 
 -- ---------------------------------------------------------------------------
@@ -53,8 +71,9 @@ SET selling_price = 4.60, manufacturing_cost = 10.32;
 -- 						** Valid test **
 -- Expected results: Insert statement add a row in the crafts table
 -- Action:
-INSERT INTO crafts 
-VALUES (100000, 'Hat-Kors', 10.65, 3.80, 'm', 'lightblue', 'Hat', 'classic', 'Nice hat for cold weather');
+UPDATE crafts
+SET size = 'm'
+WHERE craft_id = 100001;
 -- Test results: 1 row Inserted
 
 -- ---------------------------------------------------------------------------
@@ -62,5 +81,6 @@ VALUES (100000, 'Hat-Kors', 10.65, 3.80, 'm', 'lightblue', 'Hat', 'classic', 'Ni
 -- Expected results: Update statement fails to modify a row in the crafts table
 -- Action:
 UPDATE crafts
-SET size = 'p';
+SET size = 'p'
+WHERE craft_id = 100001;
 -- Test results: 
