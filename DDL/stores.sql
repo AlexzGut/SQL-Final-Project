@@ -31,7 +31,7 @@ ALTER TABLE stores
 ALTER TABLE stores
 	ADD CONSTRAINT stores_manager_id_fk
     FOREIGN KEY (manager_id)
-    REFERENCES employees (manager_id);
+    REFERENCES employees (employee_id);
     
 -- Constraints
 ALTER TABLE stores

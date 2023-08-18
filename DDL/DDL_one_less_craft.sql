@@ -1,4 +1,4 @@
-CREATE SCHEMA one_less_craft;
+-- CREATE SCHEMA one_less_craft;
 -- DROP SCHEMA one_less_craft;
 
 -- -------------------------------------------------------------------------
@@ -216,7 +216,7 @@ ALTER TABLE stores
 -- -------------------------------------------------------------------------
 CREATE TABLE suppliers (
 	supplier_id NUMERIC(6,0) NOT NULL,
-	supplier_name NUMERIC(6,0) NOT NULL,
+	supplier_name VARCHAR(20) NOT NULL,
     supplier_contact VARCHAR (10) NOT NULL,
     supplier_address VARCHAR (50) NOT NULL);
 
@@ -469,7 +469,7 @@ ALTER TABLE stores
 ALTER TABLE stores
 	ADD CONSTRAINT stores_manager_id_fk
     FOREIGN KEY (manager_id)
-    REFERENCES employees (manager_id);
+    REFERENCES employees (employee_id);
 -- -------------------------------------------------------------------------
 -- 								  WAREHOUSES
 -- Foreign Key
